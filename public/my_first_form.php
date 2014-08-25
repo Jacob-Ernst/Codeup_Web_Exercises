@@ -9,14 +9,36 @@
 	<title>My First Form</title>
 </head>
 <body>
+	<h2>User Login</h2>
 	<form method="POST">
 		<p>
-			<label for="first_name">First Name</label>
-			<input type="text" name="first_name" id="first_name"/>
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username"/>
 		</p>
 		<p>
-			<label for="last_name">Last Name</label>
-			<input type="text" name="last_name" id="last_name"/>
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password"/>
+		</p>
+		<input type="submit"/>
+	 </form>
+
+	<h2>Compose Email</h2>
+	<form method="POST">
+		<p>
+			<label for="to">To:</label>
+			<input type="text" name="to" id="to"/>
+		</p>
+		<p>
+			<label for="from">From:</label>
+			<input type="text" name="from" id="from"/>
+		</p>
+		<p>
+			<label for="subject">Subject:</label>
+			<input type="text" name"subject" id="subject"/>
+		</p>
+		<p>
+			<label for="body">Body:</label>
+			<textarea id="email_body" name="email_body" rows="5" cols="40">Content Here</textarea>
 		</p>
 		<input type="submit"/>
 	 </form>
