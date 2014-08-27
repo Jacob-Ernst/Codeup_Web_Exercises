@@ -1,4 +1,9 @@
-.fancy-header {
+h1 {
     color: blue; /* single line comment */
+    text-decoration: underline;
+}
+
+h2 {
+    color: red; /* single line comment */
     text-decoration: underline;
 }
