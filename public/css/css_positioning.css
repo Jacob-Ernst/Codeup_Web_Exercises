@@ -1,0 +1,61 @@
+h1{
+	text-align: center;
+	color: purple;
+	text-decoration: underline; 
+}
+
+#container > div{
+	margin: 25px;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	color: white;
+	font-weight: bold;
+	position: relative;
+}
+
+.red{
+	background-color: red;
+	float: left;
+}
+
+
+.orange{
+	background-color: orange;
+	float: left;
+}
+
+.yellow{
+	background-color: yellow;
+	float: left;
+}
+
+.green{
+	background-color: green;
+	float: left;
+}
+
+.blue{
+	background-color: blue;
+	float: left;
+}
+
+.violet{
+	background-color: violet;
+	float: left;
+}
+
+div#container{
+	height: 700px;
+	width: 400px;
+	position: relative;
+	margin: auto auto;
+
+}
+
+img{
+	position: absolute;
+	top: -45px;
+    right: -45px;
+}
