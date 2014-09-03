@@ -8,11 +8,27 @@
     <script>
         var names = ['Hugh', 'Bill', 'Sasha', 'Leon'];
         
+        
+        for (var i = 0; i < names.length; i++) {
+            console.log(names[i]);
+        }
+        
+        names.forEach(function (element, index, array) {
+
+            // element is the shape name
+            // index is the iterator
+            // array is the shapes array itself
+
+            console.log(element);
+        });
+        
+        
+        
         console.log(names.length);
-        console.log(names[0]);
-        console.log(names[1]);
-        console.log(names[2]);
-        console.log(names[3]);
+        // console.log(names[0]);
+        // console.log(names[1]);
+        // console.log(names[2]);
+        // console.log(names[3]);
         
     
             // todo:
