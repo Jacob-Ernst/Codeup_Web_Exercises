@@ -1,0 +1,15 @@
+.navbar-default{
+    background-image: url('/img/zwartevilt_@2X.jpg');
+     
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+color: white;
+background-color: rgba(248, 248, 57, 0.44);
+}
+.navbar-default .navbar-nav>li>a {
+color: #FFF;
+}
+
+
+
+
