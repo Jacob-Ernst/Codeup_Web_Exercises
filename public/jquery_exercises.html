@@ -9,7 +9,14 @@
             alert( 'The DOM has finished loading!' );
         });
         $(document).ready(function() {
-            $('h1, p, li').css('background', 'yellow');
+            $('h1').click(function(event) {
+                $(this).css('background-color', 'blue');
+            });
+        });
+        $(document).ready(function() {
+            $('p').dblclick(function(event) {
+                $(this).css('font-size', '18px');
+            });
         });
     </script>
 </head>
