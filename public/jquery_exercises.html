@@ -9,26 +9,34 @@
             alert( 'The DOM has finished loading!' );
         });
         $('document').ready(function() {
-            var contents = $('#no').html('this is better');
-            contents = 'this is better'
+            $('li').css('font-size', '20px');
         });
         $('document').ready(function() {
-            var poo = $('.container').html();
-            poo = '<p>different</p>' ;
+            $('h1').css('background', 'yellow');
+        });
+        $('document').ready(function() {
+            $('p').css('background', 'blue');
+        });
+        $('document').ready(function() {
+            $('li').css('background', 'green');
+        });
+        $('document').ready(function() {
+            var hi = $('h1').html();
+            alert(hi);
         });
     </script>
 </head>
 <body>
    <div class='container'>
-        <h1 id="no">Goodbye world</h1>
+        <h1 id="no" class='codeup'>Goodbye world</h1>
         <p id='yes'>This is very awesome</p>
    </div>
     
     <div class='container'>
         <ul id='list'>
-            <li id='Im different'></li>
-            <li></li>
-            <li></li>
+            <li id='Im different' class='codeup'>portal reference</li>
+            <li>me me meme</li>
+            <li class='codeup'> YO OY YO OY</li>
         </ul>
     </div>
     
