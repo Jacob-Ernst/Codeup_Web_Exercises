@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Delayed Autosave</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
     
@@ -21,10 +22,6 @@
             // setTimeout(clearTimeout(timeoutID), delay);
             
             
-            
-            
-            
-            
             // todo:
             // Use setTimeout and clearTimeout within this function
             // so that the save() function is called 5 seconds after
@@ -39,8 +36,11 @@
         // we will learn about events in the DOM lessons
         
         
-        var textarea = document.getElementById('important');
-        textarea.addEventListener('keyup', autosave, false);
+        
+        $('#important').keyup(autosave);
+        
+        // var textarea = document.getElementById('important');
+        // textarea.addEventListener('keyup', autosave, false);
 
     </script>
 
