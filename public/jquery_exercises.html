@@ -8,9 +8,29 @@
         $(document).ready(function() {
             alert( 'The DOM has finished loading!' );
         });
+        $('document').ready(function() {
+            var contents = $('#no').html('this is better');
+            contents = 'this is better'
+        });
+        $('document').ready(function() {
+            var poo = $('.container').html();
+            poo = '<p>different</p>' ;
+        });
     </script>
 </head>
 <body>
+   <div class='container'>
+        <h1 id="no">Goodbye world</h1>
+        <p id='yes'>This is very awesome</p>
+   </div>
+    
+    <div class='container'>
+        <ul id='list'>
+            <li id='Im different'></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     
 </body>
 </html>
