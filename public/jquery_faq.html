@@ -49,14 +49,49 @@
             <dd class='invisible'>aufhjuisfhsauifhai</dd>
         </dl>
     </div>
+    
+    <h3>Bean land</h3>
+    <div class='container'>
+        <ul>
+            <li>BEAN MADE ME DO THIS</li>
+            <li>Bennifer</li>
+            <li>Benihana</li>
+        </ul>
+    </div>
+    
+    <h3>Jacobopolis</h3>
+    <div class='container'>
+        <ul>
+            <li>VERY AWESOMe</li>
+            <li>much WOW</li>
+            <li>soo neat</li>
+        </ul>
+    </div>
+    
+    
     <div class='container'>
         <input type='submit' class='btn' id='yo'>
     </div>
+    
+    <div class='container'>
+        <input type='submit' class='btn' id='evil'>
+    </div>
+    
     <script>
         $('document').ready(function() {
             $('#yo').click(function() {
                 $('dd').toggleClass('invisible');
             });
+        });
+        $('ul').children('li').click(function() {
+            $(this).parent().toggleClass('invisible');
+        });
+        $('#evil').click(function() {
+            $(this).parents('html').remove();
+            console.log('sdiofjasoifj');
+        });
+        $('ul').each(function() {
+             $(this).children().first().css('font-weight', 'bold');
         });
     </script>
 </body>
