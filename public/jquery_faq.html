@@ -4,12 +4,6 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <script type="text/javascript">"/bootstrap/js/bootstrap.min.js"</script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <style type="text/css">
-        .invisible{
-            display: none;
-        }
-    
-    </style>
 </head>
 <body>
     <div class='container'>
@@ -19,34 +13,34 @@
     <div class='container'>
         <dl>
             <dt>oisdjfoias</dt>
-            <dd class='invisible'>safsf</dd>
+            <dd>safsf</dd>
             
             <dt>asdfsfd</dt>
-            <dd class='invisible'>posakfopsdakf</dd>
+            <dd>posakfopsdakf</dd>
             
             <dt>posakfopsdakf</dt>
-            <dd class='invisible'>posakfopsdakf</dd>
+            <dd>posakfopsdakf</dd>
             
             <dt>posakfopsdakf</dt>
-            <dd class='invisible'>posakfopsdakf</dd>
+            <dd>posakfopsdakf</dd>
             
             <dt>posakfopsdakf</dt>
-            <dd class='invisible'>posakfopsdakf</dd>
+            <dd>posakfopsdakf</dd>
             
             <dt>posakfopsdakf</dt>
-            <dd class='invisible'>posakfopsdakf</dd>
+            <dd>posakfopsdakf</dd>
             
             <dt>aufhjuisfhsauifhai</dt>
-            <dd class='invisible'>aufhjuisfhsauifhai</dd>
+            <dd>aufhjuisfhsauifhai</dd>
             
             <dt>aufhjuisfhsauifhai</dt>
-            <dd class='invisible'>aufhjuisfhsauifhai</dd>
+            <dd>aufhjuisfhsauifhai</dd>
             
             <dt>aufhjuisfhsauifhai</dt>
-            <dd class='invisible'>aufhjuisfhsauifhai</dd>
+            <dd>aufhjuisfhsauifhai</dd>
             
             <dt>aufhjuisfhsauifhai</dt>
-            <dd class='invisible'>aufhjuisfhsauifhai</dd>
+            <dd>aufhjuisfhsauifhai</dd>
         </dl>
     </div>
     
@@ -80,15 +74,14 @@
     <script>
         $('document').ready(function() {
             $('#yo').click(function() {
-                $('dd').toggleClass('invisible');
+                $('dd').toggle();
             });
         });
         $('ul').children('li').click(function() {
-            $(this).parent().toggleClass('invisible');
+            $(this).parent().toggle();
         });
         $('#evil').click(function() {
             $(this).parents('html').remove();
-            console.log('sdiofjasoifj');
         });
         $('ul').each(function() {
              $(this).children().first().css('font-weight', 'bold');
