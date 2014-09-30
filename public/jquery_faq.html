@@ -44,8 +44,8 @@
         </dl>
     </div>
     
-    <h3>Bean land</h3>
     <div class='container'>
+        <h3>Bean land</h3>
         <ul>
             <li>BEAN MADE ME DO THIS</li>
             <li>Bennifer</li>
@@ -53,8 +53,8 @@
         </ul>
     </div>
     
-    <h3>Jacobopolis</h3>
     <div class='container'>
+        <h3>Jacobopolis</h3>
         <ul>
             <li>VERY AWESOMe</li>
             <li>much WOW</li>
@@ -74,11 +74,11 @@
     <script>
         $('document').ready(function() {
             $('#yo').click(function() {
-                $('dd').toggle();
+                $('dd').fadeToggle();
             });
         });
-        $('ul').children('li').click(function() {
-            $(this).parent().toggle();
+        $('h3').click(function() {
+            $(this).parent().children('ul').fadeToggle();
         });
         $('#evil').click(function() {
             $(this).parents('html').remove();
