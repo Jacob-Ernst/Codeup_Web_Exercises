@@ -74,11 +74,11 @@
     <script>
         $('document').ready(function() {
             $('#yo').click(function() {
-                $('dd').fadeToggle();
+                $('dd').slideToggle();
             });
         });
         $('h3').click(function() {
-            $(this).parent().children('ul').fadeToggle();
+            $(this).parent().children('ul').slideToggle();
         });
         $('#evil').click(function() {
             $(this).parents('html').remove();
