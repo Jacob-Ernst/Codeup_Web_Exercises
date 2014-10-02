@@ -4,29 +4,158 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <script type="text/javascript">"/bootstrap/js/bootstrap.min.js"</script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <style src="jquery-ui-1.11.1.custom/jquery-ui.min.css"></style>
+    <script src="jquery-ui-1.11.1.custom/jquery-ui.min.js"></script>
     <style type="text/css">
-        .evil{
-            height: 400px;
-            width: 400px;
+        .heading{
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .btn{
+            margin-left: 580px ;
+        }
+        
+        html{
+            cursor:url(img/pokeball.gif),auto;
+        }
+        .fat{
+            height: 180px;
+            width: 180px;
+            border: solid black 2px;
+            padding-top: 3px;
+            background-image: url(img/grass.jpg);
+        }
+        
+        .pika{
+            height: 170px;
+            width: 170px;
         }
     </style>
 </head>
 <body>
+        <AUDIO src='img/poke.mp3' id='audio'></AUDIO>
     
-    <div class='container'>
+        <h2 class='heading'>Pika Pik</h2>
+        <h3 class='heading'>Score:<span class='score'>0</span></h3>
+        <h3 class='heading'>Timer:<span class='timer'>30</span></h3>
+        <button class='btn'>YOYOYO</button>
+        
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <img src="img/bill-oreilly-caricature-1a.jpg" class="img-rounded evil img-responsive">
+            <div class="col-md-2 col-md-offset-3 fat">
+                <img src="img/pikachu.png" id='1' class="img-rounded pika img-responsive ">
+            </div>
+            <div class="col-md-2 fat">
+                <img src="img/pikachu.png" id='2' class="img-rounded pika img-responsive">
+            </div>
+            <div class="col-md-2 fat">
+                <img src="img/pikachu.png" id='3' class="img-rounded pika img-responsive">
             </div>
         </div>
-    </div>
+        
+        <div class="row">
+            <div class="col-md-2 col-md-offset-3 fat">
+                <img src="img/pikachu.png" id='4' class="img-rounded pika img-responsive">
+            </div>
+            <div class="col-md-2 fat">
+                <img src="img/pikachu.png" id='5' class="img-rounded pika img-responsive">
+            </div>
+            <div class="col-md-2 fat">
+                <img src="img/pikachu.png" id='6' class="img-rounded pika img-responsive">
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-2 col-md-offset-3 fat">
+                <img src="img/pikachu.png" id='7' class="img-rounded pika img-responsive">
+            </div>
+            <div class="col-md-2 fat">
+                <img src="img/pikachu.png" id='8' class="img-rounded pika img-responsive">
+            </div>
+            <div class="col-md-2 fat">
+                <img src="img/pikachu.png" id='9' class="img-rounded pika img-responsive">
+            </div>
+        </div>
     
      <script>
-        $('document').ready(function() {
-            $('.evil').click(function() {
-                $(this).fadeToggle();
-            });
+        var i = 0;
+        
+        var choice = 0;
+        
+        var speed = 2000;
+        
+        
+        var startTimer = function(){
+            countdown = setInterval(function(){
+                var timer = $('.timer');
+                current = parseInt(timer.html());
+                timer.html(--current);
+            }, 1000);
+                
+        }
+        
+        function show(){
+            $('img').hide();
+            
+            if ($('.timer').html() <= 0) {
+                endGame();
+            };
+            
+            var res;
+            
+            do{
+                res =  Math.floor((Math.random() * 9) + 1);
+            } while(res == choice);
+            
+            choice = res;
+            
+            $("#" + choice).show();
+        }
+        
+        $('.pika').click(function(event) {
+           speed -= 200; 
+           $(this).hide();
+           console.log(i);
+           event.stopPropagation();
+           clearInterval(gameLoop);
+           gameLoop = setInterval(show, speed);
+           console.log(gameLoop);
         });
+        
+        $('.fat').click(function(event) {
+            speed += 100;
+            event.stopPropagation();
+            clearInterval(gameLoop);
+            gameLoop = setInterval(show, speed);
+            console.log(speed);
+            console.log(gameLoop);
+        });
+        
+        function startGame(){
+            console.log('hello');
+            
+            $('#audio').get(0).play();
+            $('#audio').get(0).currentTime = 0;
+            
+            $('.btn').attr('disabled', 'disabled');
+            
+            startTimer();
+            
+            
+            gameLoop = setInterval(show, speed);
+        }
+        
+        function endGame(){
+            $('.btn').removeAttr('disabled');
+            $('.score').html(0);
+            $('.timer').html(30);
+            clearInterval(gameLoop);
+            clearInterval(countdown);
+            $('.pika').show();
+            speed = 2000;
+        }
+
+        $('.btn').click(startGame);
      </script>
     
 
