@@ -42,6 +42,7 @@
         <AUDIO src='img/poke.mp3' id='audio'></AUDIO>
     
         <h2 class='heading'>Pika Pik</h2>
+        <h3 class='heading'>High Score:<span class='highScore'>0</span></h3>
         <h3 class='heading'>Score:<span class='score'>0</span></h3>
         <h3 class='heading'>Timer:<span class='timer'>30</span></h3>
         <button class='btn'>YOYOYO</button>
@@ -85,9 +86,13 @@
      <script>
         var i = 30;
         
+        var highScore = 0;
+        
         var choice = 0;
         
         var speed = 2000;
+        
+        var score = 0;
         
         var startTimer = function(){
             countdown = setInterval(function(){
@@ -116,9 +121,17 @@
         }
         
         $('.pika').click(function(event) {
+           score++;
+          
+           $('.score').html(score);
+           
+           if (score > highScore) {
+                highScore = score;
+                $('.highScore').html(highScore);
+           };
+           
            speed -= 200; 
            $(this).hide();
-           console.log(i);
            event.stopPropagation();
            clearInterval(gameLoop);
            gameLoop = setInterval(show, speed);
@@ -126,17 +139,18 @@
         });
         
         $('.fat').click(function(event) {
+            if (score != 0) {
+                score--;
+                $('.score').html(score);
+            };
+            
             speed += 100;
             event.stopPropagation();
             clearInterval(gameLoop);
             gameLoop = setInterval(show, speed);
-            console.log(speed);
-            console.log(gameLoop);
         });
         
         function startGame(){
-            console.log('hello');
-            
             $('#audio').get(0).play();
             $('#audio').get(0).currentTime = 0;
             
@@ -150,13 +164,16 @@
         
         function endGame(){
             $('.btn').removeAttr('disabled');
-            $('.score').html(0);
+            score = 0;
+            $('.score').html(score);
             i = 30;
             $('.timer').html(i);
             clearInterval(gameLoop);
             clearInterval(countdown);
             $('.pika').show();
             speed = 2000;
+            $('#audio').get(0).pause();
+            $('#audio').get(0).load();
         }
 
         $('.btn').click(startGame);
