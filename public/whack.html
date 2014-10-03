@@ -96,8 +96,11 @@
         
         var startTimer = function(){
             countdown = setInterval(function(){
-                i--;
-                $('.timer').html(i);
+                if (i != 0) {
+                    i--;
+                    $('.timer').html(i);
+                }
+                
             }, 1000);
                 
         }
