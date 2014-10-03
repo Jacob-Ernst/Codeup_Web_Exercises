@@ -83,18 +83,16 @@
         </div>
     
      <script>
-        var i = 0;
+        var i = 30;
         
         var choice = 0;
         
         var speed = 2000;
         
-        
         var startTimer = function(){
             countdown = setInterval(function(){
-                var timer = $('.timer');
-                current = parseInt(timer.html());
-                timer.html(--current);
+                i--;
+                $('.timer').html(i);
             }, 1000);
                 
         }
@@ -153,7 +151,8 @@
         function endGame(){
             $('.btn').removeAttr('disabled');
             $('.score').html(0);
-            $('.timer').html(30);
+            i = 30;
+            $('.timer').html(i);
             clearInterval(gameLoop);
             clearInterval(countdown);
             $('.pika').show();

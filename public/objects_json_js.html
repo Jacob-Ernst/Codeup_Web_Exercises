@@ -31,7 +31,7 @@
     {
         'title'     : 'Candide',
         'author'    : {
-            'firstName'     : 'Voltiare',
+            'firstName'     : 'Voltaire',
             'lastName'      : 'N/A'
         }
     },
@@ -69,7 +69,7 @@
         
         books.forEach(function (book, index){
             console.log('---------------------------------');
-            console.log('[' + index + '] ' + book.title + ': '  + book.author.lastName + ', '+ book.author.firstName);
+            console.log('[' + (index + 1) + '] ' + book.title + ': '  + book.author.lastName + ', '+ book.author.firstName);
             console.log('---------------------------------');
         });
     // end loop here
